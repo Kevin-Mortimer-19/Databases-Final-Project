@@ -1,0 +1,25 @@
+INTERMEDIATE
+
+1.	SELECT AVG(Reward) AS Average_Reward
+	FROM Quests
+	WHERE Rank >= 6 AND RANK <= 9;
+
+2.	SELECT Rarity, COUNT(DISTINCT Monster_ID) as Number_of_Monsters
+	FROM Monsters
+	GROUP BY Rarity
+	ORDER BY Rarity;
+
+3.	SELECT Name
+	FROM Characters
+	WHERE Account_ID =  
+		(SELECT Account_ID
+		FROM Accounts
+		HAVING MAX(Time_Played);
+
+
+ADVANCED
+
+1.	CREATE VIEW Low_Rank_Quests
+	AS SELECT*
+	FROM Quests
+	WHERE Rank <= 9;

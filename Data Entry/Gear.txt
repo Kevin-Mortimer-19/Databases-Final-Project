@@ -1,0 +1,119 @@
+INSERT INTO Gear VALUES
+(001, 'Jagras Helm','Head', 12, 6, 1);
+
+INSERT INTO Gear VALUES
+(002, 'Jagras Chestplate','Chest', 12, 6, 1);
+
+INSERT INTO Gear VALUES
+(003, 'Jagras Gauntlets','Arms', 12, 6, 1);
+
+INSERT INTO Gear VALUES
+(004, 'Jagras Boots','Legs', 12, 6, 1);
+
+INSERT INTO Gear VALUES
+(005, 'Hazard Helm','Head', 36, 18, 2);
+
+INSERT INTO Gear VALUES
+(006, 'Hazard Chestplate','Chest', 36, 18, 2);
+
+INSERT INTO Gear VALUES
+(007, 'Hazard Gauntlets','Arms', 36, 18, 2);
+
+INSERT INTO Gear VALUES
+(008, 'Hazard Boots','Legs', 36, 18, 2);
+
+INSERT INTO Gear VALUES
+(009, 'Legiana Helm','Head', 28, 14, 3);
+
+INSERT INTO Gear VALUES
+(010, 'Legiana Chestplate','Chest', 28, 14, 3);
+
+INSERT INTO Gear VALUES
+(011, 'Legiana Gauntlets','Arms', 28, 14, 3);
+
+INSERT INTO Gear VALUES
+(012, 'Legiana Boots','Legs', 28, 14, 3);
+
+INSERT INTO Gear VALUES
+(013, 'Zinogre Helm','Head', 44, 22, 4);
+
+INSERT INTO Gear VALUES
+(014, 'Zinogre Chestplate','Chest', 44, 22, 4);
+
+INSERT INTO Gear VALUES
+(015, 'Zinogre Gauntlets','Arms', 44, 22, 4);
+
+INSERT INTO Gear VALUES
+(016, 'Zinogre Boots','Legs', 44, 22, 4);
+
+INSERT INTO Gear VALUES
+(017, 'Daora Helm','Head', 36, 18, 5);
+
+INSERT INTO Gear VALUES
+(018, 'Daora Chestplate','Chest', 36, 18, 5);
+
+INSERT INTO Gear VALUES
+(019, 'Daora Gauntlets','Arms', 36, 18, 5);
+
+INSERT INTO Gear VALUES
+(020, 'Daora Boots','Legs', 36, 18, 5);
+
+INSERT INTO Gear VALUES
+(021, 'Barioth Helm','Head', 40, 20, 6);
+
+INSERT INTO Gear VALUES
+(022, 'Barioth Chestplate','Chest', 40, 20, 6);
+
+INSERT INTO Gear VALUES
+(023, 'Barioth Gauntlets','Arms', 40, 20, 6);
+
+INSERT INTO Gear VALUES
+(024, 'Barioth Boots','Legs', 40, 20, 6);
+
+INSERT INTO Gear VALUES
+(025, 'Kadachi Helm','Head', 18, 9, 7);
+
+INSERT INTO Gear VALUES
+(026, 'Kadachi Chestplate','Chest', 18, 9, 7);
+
+INSERT INTO Gear VALUES
+(027, 'Kadachi Gauntlets','Arms', 18, 9, 7);
+
+INSERT INTO Gear VALUES
+(028, 'Kadachi Boots','Legs', 18, 9, 7);
+
+INSERT INTO Gear VALUES
+(029, 'Bazel Helm','Head', 34, 17, 8);
+
+INSERT INTO Gear VALUES
+(030, 'Bazel Chestplate','Chest', 34, 17, 8);
+
+INSERT INTO Gear VALUES
+(031, 'Bazel Gauntlets','Arms', 34, 17, 8);
+
+INSERT INTO Gear VALUES
+(032, 'Bazel Boots','Legs', 34, 17, 8);
+
+INSERT INTO Gear VALUES
+(033, 'Kirin Helm','Head', 26, 13, 9);
+
+INSERT INTO Gear VALUES
+(034, 'Kirin Chestplate','Chest', 26, 13, 9);
+
+INSERT INTO Gear VALUES
+(035, 'Kirin Gauntlets','Arms', 26, 13, 9);
+
+INSERT INTO Gear VALUES
+(036, 'Kirin Boots','Legs', 26, 13, 9);
+
+INSERT INTO Gear VALUES
+(037, 'Rath Helm','Head', 26, 13, 10);
+
+INSERT INTO Gear VALUES
+(038, 'Rath Chestplate','Chest', 26, 13, 10);
+
+INSERT INTO Gear VALUES
+(039, 'Rath Gauntlets','Arms', 26, 13, 10);
+
+INSERT INTO Gear VALUES
+(040, 'Rath Boots','Legs', 26, 13, 10);

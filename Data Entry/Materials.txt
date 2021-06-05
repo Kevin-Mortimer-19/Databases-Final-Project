@@ -1,0 +1,251 @@
+INSERT INTO Materials VALUES
+(001, 'Anjanath Pelt', 4, 01, 01);
+
+INSERT INTO Materials VALUES
+(002, 'Anjanath Scale', 4, 01, 01);
+
+INSERT INTO Materials VALUES
+(003, 'Anjanath Fang', 4, 01, 01);
+
+INSERT INTO Materials VALUES
+(004, 'Anjanath Plate', 4, 01, 01);
+
+INSERT INTO Materials VALUES
+(005, 'Banbaro Pelt', 10, 02, 02);
+
+INSERT INTO Materials VALUES
+(006, 'Banbaro Scale', 10, 02, 02);
+
+INSERT INTO Materials VALUES
+(007, 'Banbaro Fang', 10, 02, 02);
+
+INSERT INTO Materials VALUES
+(008, 'Banbaro Plate', 10, 02, 02);
+
+INSERT INTO Materials VALUES
+(009, 'Barioth Pelt', 11, 03, 03);
+
+INSERT INTO Materials VALUES
+(010, 'Barioth Scale', 11, 03, 03);
+
+INSERT INTO Materials VALUES
+(011, 'Barioth Fang', 11, 03, 03);
+
+INSERT INTO Materials VALUES
+(012, 'Barioth Plate', 11, 03, 03);
+
+INSERT INTO Materials VALUES
+(013, 'Barroth Pelt', 3, 04, 04);
+
+INSERT INTO Materials VALUES
+(014, 'Barroth Scale', 3, 04, 04);
+
+INSERT INTO Materials VALUES
+(015, 'Barroth Fang', 3, 04, 04);
+
+INSERT INTO Materials VALUES
+(016, 'Barroth Plate', 3, 04, 04);
+
+INSERT INTO Materials VALUES
+(017, 'Bazelgeuse Pelt', 8, 05, 05);
+
+INSERT INTO Materials VALUES
+(018, 'Bazelgeuse Scale', 8, 05, 05);
+
+INSERT INTO Materials VALUES
+(019, 'Bazelgeuse Fang', 8, 05, 05);
+
+INSERT INTO Materials VALUES
+(020, 'Bazelgeuse Plate', 8, 05, 05);
+
+INSERT INTO Materials VALUES
+(021, 'Diablos Pelt', 5, 06, 06);
+
+INSERT INTO Materials VALUES
+(022, 'Diablos Scale', 5, 06, 06);
+
+INSERT INTO Materials VALUES
+(023, 'Diablos Fang', 5, 06, 06);
+
+INSERT INTO Materials VALUES
+(024, 'Diablos Plate', 5, 06, 06);
+
+INSERT INTO Materials VALUES
+(025, 'Dodogama Pelt', 6, 07, 07);
+
+INSERT INTO Materials VALUES
+(026, 'Dodogama Scale', 6, 07, 07);
+
+INSERT INTO Materials VALUES
+(027, 'Dodogama Fang', 6, 07, 07);
+
+INSERT INTO Materials VALUES
+(028, 'Dodogama Plate', 6, 07, 07);
+
+INSERT INTO Materials VALUES
+(029, 'Great Jagras Pelt', 1, 08, 08);
+
+INSERT INTO Materials VALUES
+(030, 'Great Jagras Scale', 1, 08, 08);
+
+INSERT INTO Materials VALUES
+(031, 'Great Jagras Fang', 1, 08, 08);
+
+INSERT INTO Materials VALUES
+(032, 'Great Jagras Plate', 1, 08, 08);
+
+INSERT INTO Materials VALUES
+(033, 'Kirin Pelt', 6, 09, 09);
+
+INSERT INTO Materials VALUES
+(034, 'Kirin Scale', 6, 09, 09);
+
+INSERT INTO Materials VALUES
+(035, 'Kirin Fang', 6, 09, 09);
+
+INSERT INTO Materials VALUES
+(036, 'Kirin Plate', 6, 09, 09);
+
+INSERT INTO Materials VALUES
+(037, 'Odogaron Pelt', 5, 10, 10);
+
+INSERT INTO Materials VALUES
+(038, 'Odogaron Scale', 5, 10, 10);
+
+INSERT INTO Materials VALUES
+(039, 'Odogaron Fang', 5, 10, 10);
+
+INSERT INTO Materials VALUES
+(040, 'Odogaron Plate', 5, 10, 10);
+
+INSERT INTO Materials VALUES
+(041, 'Pukei-Pukei Pelt', 2, 11, 1);
+
+INSERT INTO Materials VALUES
+(042, 'Pukei-Pukei Scale', 2, 11, 1);
+
+INSERT INTO Materials VALUES
+(043, 'Pukei-Pukei Fang', 2, 11, 1);
+
+INSERT INTO Materials VALUES
+(044, 'Pukei-Pukei Plate', 2, 11, 1);
+
+INSERT INTO Materials VALUES
+(045, 'Rathalos Pelt', 5, 12, 2);
+
+INSERT INTO Materials VALUES
+(046, 'Rathalos Scale', 5, 12, 2);
+
+INSERT INTO Materials VALUES
+(047, 'Rathalos Fang', 5, 12, 2);
+
+INSERT INTO Materials VALUES
+(048, 'Rathalos Plate', 5, 12, 2);
+
+INSERT INTO Materials VALUES
+(049, 'Tobi-Kadachi Pelt', 3, 13, 3);
+
+INSERT INTO Materials VALUES
+(050, 'Tobi-Kadachi Scale', 3, 13, 3);
+
+INSERT INTO Materials VALUES
+(051, 'Tobi-Kadachi Fang', 3, 13, 3);
+
+INSERT INTO Materials VALUES
+(052, 'Tobi-Kadachi Plate', 3, 13, 3);
+
+INSERT INTO Materials VALUES
+(053, 'Uragaan Pelt', 7, 14, 4);
+
+INSERT INTO Materials VALUES
+(054, 'Uragaan Scale', 7, 14, 4);
+
+INSERT INTO Materials VALUES
+(055, 'Uragaan Fang', 7, 14, 4);
+
+INSERT INTO Materials VALUES
+(056, 'Uragaan Plate', 7, 14, 4);
+
+INSERT INTO Materials VALUES
+(057, 'Vaal Hazak Pelt', 9, 15, 5);
+
+INSERT INTO Materials VALUES
+(058, 'Vaal Hazak Scale', 9, 15, 5);
+
+INSERT INTO Materials VALUES
+(059, 'Vaal Hazak Fang', 9, 15, 5);
+
+INSERT INTO Materials VALUES
+(060, 'Vaal Hazak Plate', 9, 15, 5);
+
+INSERT INTO Materials VALUES
+(061, 'Zinogre Pelt', 12, 16, 6);
+
+INSERT INTO Materials VALUES
+(062, 'Zinogre Scale', 12, 16, 6);
+
+INSERT INTO Materials VALUES
+(063, 'Zinogre Fang', 12, 16, 6);
+
+INSERT INTO Materials VALUES
+(064, 'Zinogre Plate', 12, 16, 6);
+
+INSERT INTO Materials VALUES
+(065, 'Legiana Pelt', 5, 17, 7);
+
+INSERT INTO Materials VALUES
+(066, 'Legiana Scale', 5, 17, 7);
+
+INSERT INTO Materials VALUES
+(067, 'Legiana Fang', 5, 17, 7);
+
+INSERT INTO Materials VALUES
+(068, 'Legiana Plate', 5, 17, 7);
+
+INSERT INTO Materials VALUES
+(069, 'Radobaan Pelt', 4, 18, 8);
+
+INSERT INTO Materials VALUES
+(070, 'Radobaan Scale', 4, 18, 8);
+
+INSERT INTO Materials VALUES
+(071, 'Radobaan Fang', 4, 18, 8);
+
+INSERT INTO Materials VALUES
+(072, 'Radobaan Plate', 4, 18, 8);
+
+INSERT INTO Materials VALUES
+(073, 'Jyuratodus Pelt', 3, 19, 9);
+
+INSERT INTO Materials VALUES
+(074, 'Jyuratodus Scale', 3, 19, 9);
+
+INSERT INTO Materials VALUES
+(075, 'Jyuratodus Fang', 3, 19, 9);
+
+INSERT INTO Materials VALUES
+(076, 'Jyuratodus Plate', 3, 19, 9);
+
+INSERT INTO Materials VALUES
+(077, 'Kushala Daora Pelt', 9, 20, 10);
+
+INSERT INTO Materials VALUES
+(078, 'Kushala Daora Scale', 9, 20, 10);
+
+INSERT INTO Materials VALUES
+(079, 'Kushala Daora Fang', 9, 20, 10);
+
+INSERT INTO Materials VALUES
+(080, 'Kushala Daora Plate', 9, 20, 10);
+
+INSERT INTO Materials VALUES
+(081, 'Banbaro Pelt', 10, 02, 8);
+
+INSERT INTO Materials VALUES
+(082, 'Rathalos Scale', 5, 12, 7);
+
+INSERT INTO Materials VALUES
+(083, 'Kirin Fang', 6, 09, 03);
+
+INSERT INTO Materials VALUES
+(084, 'Bazelgeuse Plate', 8, 05, 01);

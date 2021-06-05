@@ -1,0 +1,17 @@
+INSERT INTO Active_Quests VALUES
+(01, 15, 01);
+
+INSERT INTO Active_Quests VALUES
+(02, 07, 03);
+
+INSERT INTO Active_Quests VALUES
+(03, 16, 04);
+
+INSERT INTO Active_Quests VALUES
+(04, 03, 05);
+
+INSERT INTO Active_Quests VALUES
+(05, 08, 07);
+
+INSERT INTO Active_Quests VALUES
+(06, 10, 10);

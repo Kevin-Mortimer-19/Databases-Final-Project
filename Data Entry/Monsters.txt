@@ -1,0 +1,59 @@
+INSERT INTO Monsters VALUES
+(001, 'Anjanath', 4, 3, 3500, 400);
+
+INSERT INTO Monsters VALUES
+(002, 'Banbaro', 10, 3, 16080, 1000);
+
+INSERT INTO Monsters VALUES
+(003, 'Barioth', 11, 3, 19060, 1100);
+
+INSERT INTO Monsters VALUES
+(004, 'Barroth', 3, 3, 2200, 300);
+
+INSERT INTO Monsters VALUES
+(005, 'Bazelgeuse', 8, 3, 8050, 700);
+
+INSERT INTO Monsters VALUES
+(006, 'Diablos', 5, 3, 4700, 500);
+
+INSERT INTO Monsters VALUES
+(007, 'Dodogama', 6, 3, 5400, 300);
+
+INSERT INTO Monsters VALUES
+(008, 'Great Jagras', 1, 3, 1000, 100);
+
+INSERT INTO Monsters VALUES
+(009, 'Kirin', 5, 4, 4600, 500);
+
+INSERT INTO Monsters VALUES
+(010, 'Odogaron', 5, 3, 4500, 500);
+
+INSERT INTO Monsters VALUES
+(011, 'Pukei-Pukei', 2, 3, 1600, 200);
+
+INSERT INTO Monsters VALUES
+(012, 'Rathalos', 5, 3, 4700, 500);
+
+INSERT INTO Monsters VALUES
+(013, 'Tobi-Kadachi', 3, 3, 2200, 300);
+
+INSERT INTO Monsters VALUES
+(014, 'Uragaan', 7, 3, 6700, 700);
+
+INSERT INTO Monsters VALUES
+(015, 'Vaal Hazak', 9, 4, 10000, 900);
+
+INSERT INTO Monsters VALUES
+(016, 'Zinogre', 12, 3, 22080, 1200);
+
+INSERT INTO Monsters VALUES
+(017, 'Legiana', 5, 3, 4500, 500);
+
+INSERT INTO Monsters VALUES
+(018, 'Radobaan', 4, 3, 2900, 400);
+
+INSERT INTO Monsters VALUES
+(019, 'Jyuratodus', 3, 3, 2200, 300);
+
+INSERT INTO Monsters VALUES
+(020, 'Kushala Daora', 9, 4, 10000, 900);

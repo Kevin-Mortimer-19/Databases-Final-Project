@@ -1,0 +1,1226 @@
+DROP TABLE IF EXISTS Active_Meals;
+DROP TABLE IF EXISTS Recipes;
+DROP TABLE IF EXISTS Meals;
+DROP TABLE IF EXISTS Ingredients;
+DROP TABLE IF EXISTS Gear_Recipes;
+DROP TABLE IF EXISTS Skills;
+DROP TABLE IF EXISTS Gear;
+DROP TABLE IF EXISTS Materials;
+DROP TABLE IF EXISTS Featured_Monster;
+DROP TABLE IF EXISTS Active_Quests;
+DROP TABLE IF EXISTS Quests;
+DROP TABLE IF EXISTS Monsters;
+DROP TABLE IF EXISTS Items;
+DROP TABLE IF EXISTS Characters;
+DROP TABLE IF EXISTS Accounts;
+
+
+CREATE TABLE Accounts
+(
+	Account_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(20),
+	Time_Played		INT,
+	Number_Of_Characters	INT
+);
+
+
+CREATE TABLE Characters
+(
+	Character_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(20),
+	Rank			INT,
+	Max_Ingredients		INT,
+	Gold			INT,
+	Account_ID		INT,
+	CONSTRAINT Characters FOREIGN KEY (Account_ID) REFERENCES Accounts(Account_ID)
+);
+
+
+CREATE TABLE Items
+(
+	Item_ID			INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(40),
+	Amount_Held		INT,
+	Amount_In_Box		INT,
+	Stat_Effected		INT,
+	Strength		VARCHAR(10),
+	Cost			INT,
+	Character_ID		INT,
+	CONSTRAINT Items FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+
+CREATE TABLE Monsters
+(
+	Monster_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(20),
+	Rarity			INT,
+	Number_Of_Materials	INT,
+	Health			INT,
+	Attack			INT
+);
+
+
+CREATE TABLE Quests
+(
+	Quest_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(100),
+	Rank			INT,
+	Reward			INT,
+	Time_Limit		INT,
+	Number_Of_Attempts	INT
+);
+
+
+CREATE TABLE Active_Quests
+(
+	Active_Quest_ID		INT		NOT NULL PRIMARY KEY,
+	Quest_ID		INT,
+	Character_ID		INT,
+	CONSTRAINT Active_Quest FOREIGN KEY (Quest_ID) REFERENCES Quests(Quest_ID),
+	CONSTRAINT Active_Quest2 FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+
+CREATE TABLE Featured_Monster
+(
+	Featured_Monster_ID		INT		NOT NULL PRIMARY KEY,
+	Quest_ID			INT,
+	Monster_ID			INT,
+	CONSTRAINT Featured_Monster FOREIGN KEY (Quest_ID) REFERENCES Quests(Quest_ID),
+	CONSTRAINT Featured_Monster2 FOREIGN KEY (Monster_ID) REFERENCES Monsters(Monster_ID)
+);
+
+
+CREATE TABLE Materials
+(
+	Material_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(40),
+	Rarity			INT,
+	Monster_ID		INT,
+	Character_ID		INT,
+	CONSTRAINT Materials FOREIGN KEY (Monster_ID) REFERENCES Monsters(Monster_ID),
+	CONSTRAINT Materials2 FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+
+CREATE TABLE Gear
+(
+	Gear_ID			INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(40),
+	Slot			VARCHAR(10),
+	Defense			INT,
+	Resistance		INT,
+	Character_ID		INT,
+	CONSTRAINT Gear FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+
+CREATE TABLE Skills
+(
+	Skill_ID	INT		NOT NULL PRIMARY KEY,
+	Name		VARCHAR(40),
+	Description	VARCHAR(200),
+	Gear_ID		INT,
+	CONSTRAINT Skill FOREIGN KEY (Gear_ID) REFERENCES Gear(Gear_ID)
+);
+
+
+CREATE TABLE Gear_Recipes
+(
+	Gear_Recipe_ID	INT		NOT NULL PRIMARY KEY,
+	Gear_ID		INT,
+	Material_ID1	INT,
+	Material_ID2	INT,
+	Material_ID3	INT,
+	Material_ID4	INT,
+	CONSTRAINT Gear_Recipe FOREIGN KEY (Gear_ID) REFERENCES Gear(Gear_ID),
+	CONSTRAINT Gear_Recipe2 FOREIGN KEY (Material_ID1) REFERENCES Materials(Material_ID),
+	CONSTRAINT Gear_Recipe3 FOREIGN KEY (Material_ID2) REFERENCES Materials(Material_ID),
+	CONSTRAINT Gear_Recipe4 FOREIGN KEY (Material_ID3) REFERENCES Materials(Material_ID),
+	CONSTRAINT Gear_Recipe5 FOREIGN KEY (Material_ID4) REFERENCES Materials(Material_ID)
+);
+
+
+CREATE TABLE Ingredients
+(
+	Ingredient_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(20),
+	Type			VARCHAR(10),
+	Freshness		BOOLEAN
+);
+
+
+CREATE TABLE Meals
+(
+	Meal_ID			INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(40),
+	Health_Increase		INT,
+	Stamina_Increase	INT,
+	Attack_Increase		INT,
+	Defense_Increase	INT,
+	Resistance_Increase	INT,
+	Cost			INT
+);
+
+
+CREATE TABLE Recipes
+(
+	Recipe_ID		INT		NOT NULL PRIMARY KEY,
+	Meal_ID			INT,
+	Ingredient_ID1		INT,
+	Ingredient_ID2		INT,
+	Ingredient_ID3		INT,
+	CONSTRAINT Recipe FOREIGN KEY (Meal_ID) REFERENCES Meals(Meal_ID),
+	CONSTRAINT Recipe2 FOREIGN KEY (Ingredient_ID1) REFERENCES Ingredients(Ingredient_ID),
+	CONSTRAINT Recipe3 FOREIGN KEY (Ingredient_ID2) REFERENCES Ingredients(Ingredient_ID),
+	CONSTRAINT Recipe4 FOREIGN KEY (Ingredient_ID3) REFERENCES Ingredients(Ingredient_ID)
+);
+
+
+CREATE TABLE Active_Meals
+(
+	Active_Meal_ID		INT		NOT NULL PRIMARY KEY,
+	Meal_ID			INT,
+	Character_ID		INT,
+	CONSTRAINT Active_Meal FOREIGN KEY (Meal_ID) REFERENCES Meals(Meal_ID),
+	CONSTRAINT Active_Meal2 FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+INSERT INTO Accounts VALUES
+(01, 'Gilgamx', 30, 1);
+
+INSERT INTO Accounts VALUES
+(02, 'Qurupeco', 80, 2);
+
+INSERT INTO Accounts VALUES
+(03, 'Maximus', 700, 3);
+
+INSERT INTO Accounts VALUES
+(04, 'wgrates', 20, 1);
+
+INSERT INTO Accounts VALUES
+(05, 'cryojazz', 100, 3);
+
+INSERT INTO Characters VALUES
+(01, 'Jitsu', 9, 5, 120000, 01);
+
+INSERT INTO Characters VALUES
+(02, 'Rurikhan', 10, 5, 240000, 02);
+
+INSERT INTO Characters VALUES
+(03, 'Ahady', 7, 4, 85000, 02);
+
+INSERT INTO Characters VALUES
+(04, 'MaiLBG', 12, 5, 568000, 03);
+
+INSERT INTO Characters VALUES
+(05, 'haezy_', 12, 5, 890000, 03);
+
+INSERT INTO Characters VALUES
+(06, 'Kagehi', 12, 5, 420000, 03);
+
+INSERT INTO Characters VALUES
+(07, 'DulceArma', 3, 3, 43000, 04);
+
+INSERT INTO Characters VALUES
+(08, 'Hirensoul', 12, 5, 320000, 05);
+
+INSERT INTO Characters VALUES
+(09, 'JetLaudir', 12, 5, 590000, 05);
+
+INSERT INTO Characters VALUES
+(10, 'Tovakiin', 5, 4, 48000, 05);
+
+INSERT INTO Items VALUES
+(01, 'Potion', 10, 50, 'Health', 'Low', 100, 01);
+
+INSERT INTO Items VALUES
+(11, 'Potion', 10, 38, 'Health', 'Low', 100, 03);
+
+INSERT INTO Items VALUES
+(12, 'Potion', 10, 22, 'Health', 'Low', 100, 05);
+
+INSERT INTO Items VALUES
+(13, 'Potion', 10, 55, 'Health', 'Low', 100, 07);
+
+INSERT INTO Items VALUES
+(14, 'Potion', 10, 48, 'Health', 'Low', 100, 09);
+
+INSERT INTO Items VALUES
+(02, 'Mega Potion', 10, 20, 'Health', 'Medium', 300, 02);
+
+INSERT INTO Items VALUES
+(03, 'Max Potion', 10, 10, 'Health', 'High', 500, 03);
+
+INSERT INTO Items VALUES
+(04, 'Energy Drink', 10, 50, 'Stamina', 'Low', 100, 04);
+
+INSERT INTO Items VALUES
+(15, 'Energy Drink', 10, 58, 'Stamina', 'Low', 100, 02);
+
+INSERT INTO Items VALUES
+(16, 'Energy Drink', 10, 19, 'Stamina', 'Low', 100, 06);
+
+INSERT INTO Items VALUES
+(17, 'Energy Drink', 10, 27, 'Stamina', 'Low', 100, 08);
+
+INSERT INTO Items VALUES
+(18, 'Energy Drink', 10, 33, 'Stamina', 'Low', 100, 10);
+
+INSERT INTO Items VALUES
+(21, 'Demondrug', 10, 20, 'Attack', 'Medium', 300, 05);
+
+INSERT INTO Items VALUES
+(05, 'Demondrug', 10, 9, 'Attack', 'Medium', 300, 04);
+
+INSERT INTO Items VALUES
+(06, 'Mega Demondrug', 10, 10, 'Attack', 'High', 500, 06);
+
+INSERT INTO Items VALUES
+(07, 'Armorskin', 10, 20, 'Defense', 'Medium', 300, 07);
+
+INSERT INTO Items VALUES
+(08, 'Mega Armorskin', 10, 10, 'Defense', 'High', 500, 08);
+
+INSERT INTO Items VALUES
+(09, 'Immunizer', 10, 20, 'Resistance', 'Medium', 300, 09);
+
+INSERT INTO Items VALUES
+(10, 'Mega Immunizer', 10, 10, 'Resistance', 'High', 500, 10);
+
+INSERT INTO Items VALUES
+(19, 'Immunizer', 10, 87, 'Resistance', 'Medium', 300, 01);
+
+INSERT INTO Items VALUES
+(20, 'Mega Immunizer', 10, 58, 'Resistance', 'High', 500, 01);
+
+INSERT INTO Monsters VALUES
+(001, 'Anjanath', 4, 3, 3500, 400);
+
+INSERT INTO Monsters VALUES
+(002, 'Banbaro', 10, 3, 16080, 1000);
+
+INSERT INTO Monsters VALUES
+(003, 'Barioth', 11, 3, 19060, 1100);
+
+INSERT INTO Monsters VALUES
+(004, 'Barroth', 3, 3, 2200, 300);
+
+INSERT INTO Monsters VALUES
+(005, 'Bazelgeuse', 8, 3, 8050, 700);
+
+INSERT INTO Monsters VALUES
+(006, 'Diablos', 5, 3, 4700, 500);
+
+INSERT INTO Monsters VALUES
+(007, 'Dodogama', 6, 3, 5400, 300);
+
+INSERT INTO Monsters VALUES
+(008, 'Great Jagras', 1, 3, 1000, 100);
+
+INSERT INTO Monsters VALUES
+(009, 'Kirin', 5, 4, 4600, 500);
+
+INSERT INTO Monsters VALUES
+(010, 'Odogaron', 5, 3, 4500, 500);
+
+INSERT INTO Monsters VALUES
+(011, 'Pukei-Pukei', 2, 3, 1600, 200);
+
+INSERT INTO Monsters VALUES
+(012, 'Rathalos', 5, 3, 4700, 500);
+
+INSERT INTO Monsters VALUES
+(013, 'Tobi-Kadachi', 3, 3, 2200, 300);
+
+INSERT INTO Monsters VALUES
+(014, 'Uragaan', 7, 3, 6700, 700);
+
+INSERT INTO Monsters VALUES
+(015, 'Vaal Hazak', 9, 4, 10000, 900);
+
+INSERT INTO Monsters VALUES
+(016, 'Zinogre', 12, 3, 22080, 1200);
+
+INSERT INTO Monsters VALUES
+(017, 'Legiana', 5, 3, 4500, 500);
+
+INSERT INTO Monsters VALUES
+(018, 'Radobaan', 4, 3, 2900, 400);
+
+INSERT INTO Monsters VALUES
+(019, 'Jyuratodus', 3, 3, 2200, 300);
+
+INSERT INTO Monsters VALUES
+(020, 'Kushala Daora', 9, 4, 10000, 900);
+
+INSERT INTO Quests VALUES
+(01, 'Tickled Pink', 4, 16000, 50, 3);
+
+INSERT INTO Quests VALUES
+(02, 'Banbaro Blockade', 10, 40000, 50, 3);
+
+INSERT INTO Quests VALUES
+(03, 'Blizzard Blitz', 11, 44000, 50, 3);
+
+INSERT INTO Quests VALUES
+(04, 'Wildspire Rampage', 3, 12000, 50, 3);
+
+INSERT INTO Quests VALUES
+(05, 'Beyond the Blasting Scales', 8, 32000, 50, 3);
+
+INSERT INTO Quests VALUES
+(06, 'Horned Tyrant Below the Sands', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(07, 'Dodogama Drama', 6, 24000, 50, 3);
+
+INSERT INTO Quests VALUES
+(08, 'The Greatest Jagras', 1, 4000, 50, 3);
+
+INSERT INTO Quests VALUES
+(09, 'Kirin the Myth', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(10, 'Mans Best Friend', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(11, 'Googly-eyed Green Monster', 2, 8000, 50, 3);
+
+INSERT INTO Quests VALUES
+(12, 'A Fiery Throne Atop the Forest', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(13, 'The Current Situation', 3, 12000, 50, 3);
+
+INSERT INTO Quests VALUES
+(14, 'Ore-eating Occupier', 7, 28000, 50, 3);
+
+INSERT INTO Quests VALUES
+(15, 'Hellish Fiend Vaal Hazak', 9, 36000, 50, 3);
+
+INSERT INTO Quests VALUES
+(16, 'Uncorner the Market', 12, 48000, 50, 3);
+
+INSERT INTO Quests VALUES
+(17, 'Embodiment of Elegance', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(18, 'A Bone to Pick', 4, 16000, 50, 3);
+
+INSERT INTO Quests VALUES
+(19, 'The Piscine Problem', 3, 12000, 50, 3);
+
+INSERT INTO Quests VALUES
+(20, 'The Eye of the Storm', 9, 36000, 50, 3);
+
+INSERT INTO Quests VALUES
+(21, 'Elder Deluxe', 9, 36000, 50, 3);
+
+INSERT INTO Quests VALUES
+(22, 'Desert Duel', 6, 24000, 50, 3);
+
+INSERT INTO Quests VALUES
+(23, 'Rotten Rumble', 9, 36000, 50, 3);
+
+INSERT INTO Active_Quests VALUES
+(01, 15, 01);
+
+INSERT INTO Active_Quests VALUES
+(02, 07, 03);
+
+INSERT INTO Active_Quests VALUES
+(03, 16, 04);
+
+INSERT INTO Active_Quests VALUES
+(04, 03, 05);
+
+INSERT INTO Active_Quests VALUES
+(05, 08, 07);
+
+INSERT INTO Active_Quests VALUES
+(06, 10, 10);
+
+INSERT INTO Featured_Monster VALUES
+(01, 01, 01);
+
+INSERT INTO Featured_Monster VALUES
+(02, 02, 02);
+
+INSERT INTO Featured_Monster VALUES
+(03, 03, 03);
+
+INSERT INTO Featured_Monster VALUES
+(04, 04, 04);
+
+INSERT INTO Featured_Monster VALUES
+(05, 05, 05);
+
+INSERT INTO Featured_Monster VALUES
+(06, 06, 06);
+
+INSERT INTO Featured_Monster VALUES
+(07, 07, 07);
+
+INSERT INTO Featured_Monster VALUES
+(08, 08, 08);
+
+INSERT INTO Featured_Monster VALUES
+(09, 09, 09);
+
+INSERT INTO Featured_Monster VALUES
+(10, 10, 10);
+
+INSERT INTO Featured_Monster VALUES
+(11, 11, 11);
+
+INSERT INTO Featured_Monster VALUES
+(12, 12, 12);
+
+INSERT INTO Featured_Monster VALUES
+(13, 13, 13);
+
+INSERT INTO Featured_Monster VALUES
+(14, 14, 14);
+
+INSERT INTO Featured_Monster VALUES
+(15, 15, 15);
+
+INSERT INTO Featured_Monster VALUES
+(16, 16, 16);
+
+INSERT INTO Featured_Monster VALUES
+(17, 17, 17);
+
+INSERT INTO Featured_Monster VALUES
+(18, 18, 18);
+
+INSERT INTO Featured_Monster VALUES
+(19, 19, 19);
+
+INSERT INTO Featured_Monster VALUES
+(20, 20, 20);
+
+INSERT INTO Featured_Monster VALUES
+(21, 21, 09);
+
+INSERT INTO Featured_Monster VALUES
+(22, 21, 15);
+
+INSERT INTO Featured_Monster VALUES
+(23, 21, 20);
+
+INSERT INTO Featured_Monster VALUES
+(24, 22, 04);
+
+INSERT INTO Featured_Monster VALUES
+(25, 22, 19);
+
+INSERT INTO Featured_Monster VALUES
+(26, 23, 10);
+
+INSERT INTO Featured_Monster VALUES
+(27, 23, 15);
+
+INSERT INTO Featured_Monster VALUES
+(28, 23, 18);
+
+INSERT INTO Materials VALUES
+(001, 'Anjanath Pelt', 4, 01, 01);
+
+INSERT INTO Materials VALUES
+(002, 'Anjanath Scale', 4, 01, 01);
+
+INSERT INTO Materials VALUES
+(003, 'Anjanath Fang', 4, 01, 01);
+
+INSERT INTO Materials VALUES
+(004, 'Anjanath Plate', 4, 01, 01);
+
+INSERT INTO Materials VALUES
+(005, 'Banbaro Pelt', 10, 02, 02);
+
+INSERT INTO Materials VALUES
+(006, 'Banbaro Scale', 10, 02, 02);
+
+INSERT INTO Materials VALUES
+(007, 'Banbaro Fang', 10, 02, 02);
+
+INSERT INTO Materials VALUES
+(008, 'Banbaro Plate', 10, 02, 02);
+
+INSERT INTO Materials VALUES
+(009, 'Barioth Pelt', 11, 03, 03);
+
+INSERT INTO Materials VALUES
+(010, 'Barioth Scale', 11, 03, 03);
+
+INSERT INTO Materials VALUES
+(011, 'Barioth Fang', 11, 03, 03);
+
+INSERT INTO Materials VALUES
+(012, 'Barioth Plate', 11, 03, 03);
+
+INSERT INTO Materials VALUES
+(013, 'Barroth Pelt', 3, 04, 04);
+
+INSERT INTO Materials VALUES
+(014, 'Barroth Scale', 3, 04, 04);
+
+INSERT INTO Materials VALUES
+(015, 'Barroth Fang', 3, 04, 04);
+
+INSERT INTO Materials VALUES
+(016, 'Barroth Plate', 3, 04, 04);
+
+INSERT INTO Materials VALUES
+(017, 'Bazelgeuse Pelt', 8, 05, 05);
+
+INSERT INTO Materials VALUES
+(018, 'Bazelgeuse Scale', 8, 05, 05);
+
+INSERT INTO Materials VALUES
+(019, 'Bazelgeuse Fang', 8, 05, 05);
+
+INSERT INTO Materials VALUES
+(020, 'Bazelgeuse Plate', 8, 05, 05);
+
+INSERT INTO Materials VALUES
+(021, 'Diablos Pelt', 5, 06, 06);
+
+INSERT INTO Materials VALUES
+(022, 'Diablos Scale', 5, 06, 06);
+
+INSERT INTO Materials VALUES
+(023, 'Diablos Fang', 5, 06, 06);
+
+INSERT INTO Materials VALUES
+(024, 'Diablos Plate', 5, 06, 06);
+
+INSERT INTO Materials VALUES
+(025, 'Dodogama Pelt', 6, 07, 07);
+
+INSERT INTO Materials VALUES
+(026, 'Dodogama Scale', 6, 07, 07);
+
+INSERT INTO Materials VALUES
+(027, 'Dodogama Fang', 6, 07, 07);
+
+INSERT INTO Materials VALUES
+(028, 'Dodogama Plate', 6, 07, 07);
+
+INSERT INTO Materials VALUES
+(029, 'Great Jagras Pelt', 1, 08, 08);
+
+INSERT INTO Materials VALUES
+(030, 'Great Jagras Scale', 1, 08, 08);
+
+INSERT INTO Materials VALUES
+(031, 'Great Jagras Fang', 1, 08, 08);
+
+INSERT INTO Materials VALUES
+(032, 'Great Jagras Plate', 1, 08, 08);
+
+INSERT INTO Materials VALUES
+(033, 'Kirin Pelt', 6, 09, 09);
+
+INSERT INTO Materials VALUES
+(034, 'Kirin Scale', 6, 09, 09);
+
+INSERT INTO Materials VALUES
+(035, 'Kirin Fang', 6, 09, 09);
+
+INSERT INTO Materials VALUES
+(036, 'Kirin Plate', 6, 09, 09);
+
+INSERT INTO Materials VALUES
+(037, 'Odogaron Pelt', 5, 10, 10);
+
+INSERT INTO Materials VALUES
+(038, 'Odogaron Scale', 5, 10, 10);
+
+INSERT INTO Materials VALUES
+(039, 'Odogaron Fang', 5, 10, 10);
+
+INSERT INTO Materials VALUES
+(040, 'Odogaron Plate', 5, 10, 10);
+
+INSERT INTO Materials VALUES
+(041, 'Pukei-Pukei Pelt', 2, 11, 1);
+
+INSERT INTO Materials VALUES
+(042, 'Pukei-Pukei Scale', 2, 11, 1);
+
+INSERT INTO Materials VALUES
+(043, 'Pukei-Pukei Fang', 2, 11, 1);
+
+INSERT INTO Materials VALUES
+(044, 'Pukei-Pukei Plate', 2, 11, 1);
+
+INSERT INTO Materials VALUES
+(045, 'Rathalos Pelt', 5, 12, 2);
+
+INSERT INTO Materials VALUES
+(046, 'Rathalos Scale', 5, 12, 2);
+
+INSERT INTO Materials VALUES
+(047, 'Rathalos Fang', 5, 12, 2);
+
+INSERT INTO Materials VALUES
+(048, 'Rathalos Plate', 5, 12, 2);
+
+INSERT INTO Materials VALUES
+(049, 'Tobi-Kadachi Pelt', 3, 13, 3);
+
+INSERT INTO Materials VALUES
+(050, 'Tobi-Kadachi Scale', 3, 13, 3);
+
+INSERT INTO Materials VALUES
+(051, 'Tobi-Kadachi Fang', 3, 13, 3);
+
+INSERT INTO Materials VALUES
+(052, 'Tobi-Kadachi Plate', 3, 13, 3);
+
+INSERT INTO Materials VALUES
+(053, 'Uragaan Pelt', 7, 14, 4);
+
+INSERT INTO Materials VALUES
+(054, 'Uragaan Scale', 7, 14, 4);
+
+INSERT INTO Materials VALUES
+(055, 'Uragaan Fang', 7, 14, 4);
+
+INSERT INTO Materials VALUES
+(056, 'Uragaan Plate', 7, 14, 4);
+
+INSERT INTO Materials VALUES
+(057, 'Vaal Hazak Pelt', 9, 15, 5);
+
+INSERT INTO Materials VALUES
+(058, 'Vaal Hazak Scale', 9, 15, 5);
+
+INSERT INTO Materials VALUES
+(059, 'Vaal Hazak Fang', 9, 15, 5);
+
+INSERT INTO Materials VALUES
+(060, 'Vaal Hazak Plate', 9, 15, 5);
+
+INSERT INTO Materials VALUES
+(061, 'Zinogre Pelt', 12, 16, 6);
+
+INSERT INTO Materials VALUES
+(062, 'Zinogre Scale', 12, 16, 6);
+
+INSERT INTO Materials VALUES
+(063, 'Zinogre Fang', 12, 16, 6);
+
+INSERT INTO Materials VALUES
+(064, 'Zinogre Plate', 12, 16, 6);
+
+INSERT INTO Materials VALUES
+(065, 'Legiana Pelt', 5, 17, 7);
+
+INSERT INTO Materials VALUES
+(066, 'Legiana Scale', 5, 17, 7);
+
+INSERT INTO Materials VALUES
+(067, 'Legiana Fang', 5, 17, 7);
+
+INSERT INTO Materials VALUES
+(068, 'Legiana Plate', 5, 17, 7);
+
+INSERT INTO Materials VALUES
+(069, 'Radobaan Pelt', 4, 18, 8);
+
+INSERT INTO Materials VALUES
+(070, 'Radobaan Scale', 4, 18, 8);
+
+INSERT INTO Materials VALUES
+(071, 'Radobaan Fang', 4, 18, 8);
+
+INSERT INTO Materials VALUES
+(072, 'Radobaan Plate', 4, 18, 8);
+
+INSERT INTO Materials VALUES
+(073, 'Jyuratodus Pelt', 3, 19, 9);
+
+INSERT INTO Materials VALUES
+(074, 'Jyuratodus Scale', 3, 19, 9);
+
+INSERT INTO Materials VALUES
+(075, 'Jyuratodus Fang', 3, 19, 9);
+
+INSERT INTO Materials VALUES
+(076, 'Jyuratodus Plate', 3, 19, 9);
+
+INSERT INTO Materials VALUES
+(077, 'Kushala Daora Pelt', 9, 20, 10);
+
+INSERT INTO Materials VALUES
+(078, 'Kushala Daora Scale', 9, 20, 10);
+
+INSERT INTO Materials VALUES
+(079, 'Kushala Daora Fang', 9, 20, 10);
+
+INSERT INTO Materials VALUES
+(080, 'Kushala Daora Plate', 9, 20, 10);
+
+INSERT INTO Materials VALUES
+(081, 'Banbaro Pelt', 10, 02, 8);
+
+INSERT INTO Materials VALUES
+(082, 'Rathalos Scale', 5, 12, 7);
+
+INSERT INTO Materials VALUES
+(083, 'Kirin Fang', 6, 09, 03);
+
+INSERT INTO Materials VALUES
+(084, 'Bazelgeuse Plate', 8, 05, 01);
+
+INSERT INTO Gear VALUES
+(001, 'Jagras Helm','Head', 12, 6, 1);
+
+INSERT INTO Gear VALUES
+(002, 'Jagras Chestplate','Chest', 12, 6, 1);
+
+INSERT INTO Gear VALUES
+(003, 'Jagras Gauntlets','Arms', 12, 6, 1);
+
+INSERT INTO Gear VALUES
+(004, 'Jagras Boots','Legs', 12, 6, 1);
+
+INSERT INTO Gear VALUES
+(005, 'Hazard Helm','Head', 36, 18, 2);
+
+INSERT INTO Gear VALUES
+(006, 'Hazard Chestplate','Chest', 36, 18, 2);
+
+INSERT INTO Gear VALUES
+(007, 'Hazard Gauntlets','Arms', 36, 18, 2);
+
+INSERT INTO Gear VALUES
+(008, 'Hazard Boots','Legs', 36, 18, 2);
+
+INSERT INTO Gear VALUES
+(009, 'Legiana Helm','Head', 28, 14, 3);
+
+INSERT INTO Gear VALUES
+(010, 'Legiana Chestplate','Chest', 28, 14, 3);
+
+INSERT INTO Gear VALUES
+(011, 'Legiana Gauntlets','Arms', 28, 14, 3);
+
+INSERT INTO Gear VALUES
+(012, 'Legiana Boots','Legs', 28, 14, 3);
+
+INSERT INTO Gear VALUES
+(013, 'Zinogre Helm','Head', 44, 22, 4);
+
+INSERT INTO Gear VALUES
+(014, 'Zinogre Chestplate','Chest', 44, 22, 4);
+
+INSERT INTO Gear VALUES
+(015, 'Zinogre Gauntlets','Arms', 44, 22, 4);
+
+INSERT INTO Gear VALUES
+(016, 'Zinogre Boots','Legs', 44, 22, 4);
+
+INSERT INTO Gear VALUES
+(017, 'Daora Helm','Head', 36, 18, 5);
+
+INSERT INTO Gear VALUES
+(018, 'Daora Chestplate','Chest', 36, 18, 5);
+
+INSERT INTO Gear VALUES
+(019, 'Daora Gauntlets','Arms', 36, 18, 5);
+
+INSERT INTO Gear VALUES
+(020, 'Daora Boots','Legs', 36, 18, 5);
+
+INSERT INTO Gear VALUES
+(021, 'Barioth Helm','Head', 40, 20, 6);
+
+INSERT INTO Gear VALUES
+(022, 'Barioth Chestplate','Chest', 40, 20, 6);
+
+INSERT INTO Gear VALUES
+(023, 'Barioth Gauntlets','Arms', 40, 20, 6);
+
+INSERT INTO Gear VALUES
+(024, 'Barioth Boots','Legs', 40, 20, 6);
+
+INSERT INTO Gear VALUES
+(025, 'Kadachi Helm','Head', 18, 9, 7);
+
+INSERT INTO Gear VALUES
+(026, 'Kadachi Chestplate','Chest', 18, 9, 7);
+
+INSERT INTO Gear VALUES
+(027, 'Kadachi Gauntlets','Arms', 18, 9, 7);
+
+INSERT INTO Gear VALUES
+(028, 'Kadachi Boots','Legs', 18, 9, 7);
+
+INSERT INTO Gear VALUES
+(029, 'Bazel Helm','Head', 34, 17, 8);
+
+INSERT INTO Gear VALUES
+(030, 'Bazel Chestplate','Chest', 34, 17, 8);
+
+INSERT INTO Gear VALUES
+(031, 'Bazel Gauntlets','Arms', 34, 17, 8);
+
+INSERT INTO Gear VALUES
+(032, 'Bazel Boots','Legs', 34, 17, 8);
+
+INSERT INTO Gear VALUES
+(033, 'Kirin Helm','Head', 26, 13, 9);
+
+INSERT INTO Gear VALUES
+(034, 'Kirin Chestplate','Chest', 26, 13, 9);
+
+INSERT INTO Gear VALUES
+(035, 'Kirin Gauntlets','Arms', 26, 13, 9);
+
+INSERT INTO Gear VALUES
+(036, 'Kirin Boots','Legs', 26, 13, 9);
+
+INSERT INTO Gear VALUES
+(037, 'Rath Helm','Head', 26, 13, 10);
+
+INSERT INTO Gear VALUES
+(038, 'Rath Chestplate','Chest', 26, 13, 10);
+
+INSERT INTO Gear VALUES
+(039, 'Rath Gauntlets','Arms', 26, 13, 10);
+
+INSERT INTO Gear VALUES
+(040, 'Rath Boots','Legs', 26, 13, 10);
+
+INSERT INTO Skills VALUES
+(01, 'Critical Eye', 'Increases Affinity', 35);
+
+INSERT INTO Skills VALUES
+(02, 'Flame Resistance', 'Increases Flame Resistance', 38);
+
+INSERT INTO Skills VALUES
+(03, 'Thunder Resistance', 'Increases Thunder Resistance', 34);
+
+INSERT INTO Skills VALUES
+(04, 'Blast Resistance', 'Increases Blast Resistance', 30);
+
+INSERT INTO Skills VALUES
+(05, 'Blight Resistance', 'Increases Blight Resistance', 5);
+
+INSERT INTO Gear_Recipes VALUES
+(001, 001, 29, 30, 31, 32);
+
+INSERT INTO Gear_Recipes VALUES
+(002, 002, 29, 30, 31, 32);
+
+INSERT INTO Gear_Recipes VALUES
+(003, 003, 29, 30, 31, 32);
+
+INSERT INTO Gear_Recipes VALUES
+(004, 004, 29, 30, 31, 32);
+
+INSERT INTO Gear_Recipes VALUES
+(005, 005, 57, 58, 59, 60);
+
+INSERT INTO Gear_Recipes VALUES
+(006, 006, 57, 58, 59, 60);
+
+INSERT INTO Gear_Recipes VALUES
+(007, 007, 57, 58, 59, 60);
+
+INSERT INTO Gear_Recipes VALUES
+(008, 008, 57, 58, 59, 60);
+
+INSERT INTO Gear_Recipes VALUES
+(009, 009, 65, 66, 67, 68);
+
+INSERT INTO Gear_Recipes VALUES
+(010, 010, 65, 66, 67, 68);
+
+INSERT INTO Gear_Recipes VALUES
+(011, 011, 65, 66, 67, 68);
+
+INSERT INTO Gear_Recipes VALUES
+(012, 012, 65, 66, 67, 68);
+
+INSERT INTO Gear_Recipes VALUES
+(013, 013, 61, 62, 63, 64);
+
+INSERT INTO Gear_Recipes VALUES
+(014, 014, 61, 62, 63, 64);
+
+INSERT INTO Gear_Recipes VALUES
+(015, 015, 61, 62, 63, 64);
+
+INSERT INTO Gear_Recipes VALUES
+(016, 016, 61, 62, 63, 64);
+
+INSERT INTO Gear_Recipes VALUES
+(017, 017, 77, 78, 79, 80);
+
+INSERT INTO Gear_Recipes VALUES
+(018, 018, 77, 78, 79, 80);
+
+INSERT INTO Gear_Recipes VALUES
+(019, 019, 77, 78, 79, 80);
+
+INSERT INTO Gear_Recipes VALUES
+(020, 020, 77, 78, 79, 80);
+
+INSERT INTO Gear_Recipes VALUES
+(021, 021, 9, 10, 11, 12);
+
+INSERT INTO Gear_Recipes VALUES
+(022, 022, 9, 10, 11, 12);
+
+INSERT INTO Gear_Recipes VALUES
+(023, 023, 9, 10, 11, 12);
+
+INSERT INTO Gear_Recipes VALUES
+(024, 024, 9, 10, 11, 12);
+
+INSERT INTO Gear_Recipes VALUES
+(025, 025, 49, 50, 51, 52);
+
+INSERT INTO Gear_Recipes VALUES
+(026, 026, 49, 50, 51, 52);
+
+INSERT INTO Gear_Recipes VALUES
+(027, 027, 49, 50, 51, 52);
+
+INSERT INTO Gear_Recipes VALUES
+(028, 028, 49, 50, 51, 52);
+
+INSERT INTO Gear_Recipes VALUES
+(029, 029, 17, 18, 19, 20);
+
+INSERT INTO Gear_Recipes VALUES
+(030, 030, 17, 18, 19, 20);
+
+INSERT INTO Gear_Recipes VALUES
+(031, 031, 17, 18, 19, 20);
+
+INSERT INTO Gear_Recipes VALUES
+(032, 032, 17, 18, 19, 20);
+
+INSERT INTO Gear_Recipes VALUES
+(033, 033, 33, 34, 35, 36);
+
+INSERT INTO Gear_Recipes VALUES
+(034, 034, 33, 34, 35, 36);
+
+INSERT INTO Gear_Recipes VALUES
+(035, 035, 33, 34, 35, 36);
+
+INSERT INTO Gear_Recipes VALUES
+(036, 036, 33, 34, 35, 36);
+
+INSERT INTO Gear_Recipes VALUES
+(037, 037, 45, 46, 47, 48);
+
+INSERT INTO Gear_Recipes VALUES
+(038, 038, 45, 46, 47, 48);
+
+INSERT INTO Gear_Recipes VALUES
+(039, 039, 45, 46, 47, 48);
+
+INSERT INTO Gear_Recipes VALUES
+(040, 040, 45, 46, 47, 48);
+
+INSERT INTO Ingredients VALUES
+(01,'Wyvern Thigh','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(02,'Tough Meat','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(03,'Aptonoth Meat','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(04,'White Liver','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(05,'Peon Turkey','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(06,'Ridgemane Tuna','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(07,'Jumbo Whelk','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(08,'Squad Sardine','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(09,'Bent-backed Shrimp','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(10,'Osseoctopus','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(11,'Magnicelery','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(12,'Stonecorn','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(13,'Plumpkin','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(14,'Aromaticelery','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(15,'Kut-Ku Bean','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(16,'Wyvern Egg','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(17,'Bullion Meat','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(18,'Diced Steak','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(19,'Tangy Tripe','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(20,'Herbivore Egg','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(21,'Sushifish','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(22,'Jewel Cactus','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(23,'Shroomcap','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(24,'Shinebloom','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(25,'Tainted Fruit','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(26,'Rockfruit','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(27,'Violet Abalone','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(28,'Gajau Liver','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(29,'Fortress Crab','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(30,'Ballerina Octopus','Fish', false);
+
+INSERT INTO Meals VALUES
+(01,'Small Meat Platter', 10, 10, 20, 0, 0, 500);
+
+INSERT INTO Meals VALUES
+(02,'Meat Platter', 20, 20, 30, 0, 0, 1000);
+
+INSERT INTO Meals VALUES
+(03,'Large Meat Platter', 30, 30, 50, 0, 0, 2000);
+
+INSERT INTO Meals VALUES
+(04,'Small Fish Platter', 10, 10, 0, 20, 0, 500);
+
+INSERT INTO Meals VALUES
+(05,'Fish Platter', 20, 20, 0, 30, 0, 1000);
+
+INSERT INTO Meals VALUES
+(06,'Large Fish Platter', 30, 30, 0, 50, 0, 2000);
+
+INSERT INTO Meals VALUES
+(07,'Small Vegetable Platter', 10, 10, 0, 0, 20, 500);
+
+INSERT INTO Meals VALUES
+(08,'Vegetable Platter', 20, 20, 0, 0, 30, 1000);
+
+INSERT INTO Meals VALUES
+(09,'Large Vegetable Platter', 30, 30, 0, 0, 50, 2000);
+
+INSERT INTO Meals VALUES
+(10,'Small Balanced Platter', 10, 10, 10, 10, 0, 500);
+
+INSERT INTO Meals VALUES
+(11,'Balanced Platter', 20, 20, 15, 15, 10, 1000);
+
+INSERT INTO Meals VALUES
+(12,'Large Balanced Platter', 30, 30, 30, 30, 30, 2000);
+
+INSERT INTO Recipes VALUES
+(01, 01, 01, 02, 03);
+
+INSERT INTO Recipes VALUES
+(02, 02, 04, 05, 16);
+
+INSERT INTO Recipes VALUES
+(03, 03, 17, 18, 19);
+
+INSERT INTO Recipes VALUES
+(04, 04, 06, 07, 08);
+
+INSERT INTO Recipes VALUES
+(05, 05, 09, 10, 21);
+
+INSERT INTO Recipes VALUES
+(06, 06, 27, 28, 29);
+
+INSERT INTO Recipes VALUES
+(07, 07, 11, 12, 13);
+
+INSERT INTO Recipes VALUES
+(08, 08, 14, 15, 22);
+
+INSERT INTO Recipes VALUES
+(09, 09, 23, 24, 25);
+
+INSERT INTO Recipes VALUES
+(10, 10, 01, 07, 24);
+
+INSERT INTO Recipes VALUES
+(11, 11, 03, 08, 26);
+
+INSERT INTO Recipes VALUES
+(12, 12, 20, 30, 26);
+
+INSERT INTO Active_Meals VALUES
+(01, 08, 01);
+
+INSERT INTO Active_Meals VALUES
+(02, 01, 02);
+
+INSERT INTO Active_Meals VALUES
+(03, 11, 03);
+
+INSERT INTO Active_Meals VALUES
+(04, 04, 04);
+
+INSERT INTO Active_Meals VALUES
+(05, 02, 05);
+
+INSERT INTO Active_Meals VALUES
+(06, 03, 06);
+
+INSERT INTO Active_Meals VALUES
+(07, 08, 07);
+
+INSERT INTO Active_Meals VALUES
+(08, 06, 08);
+
+INSERT INTO Active_Meals VALUES
+(09, 10, 09);
+
+INSERT INTO Active_Meals VALUES
+(10, 07, 10);

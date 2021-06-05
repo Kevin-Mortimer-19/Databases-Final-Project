@@ -1,0 +1,14 @@
+INSERT INTO Skills VALUES
+(01, 'Critical Eye', 'Increases Affinity', 35);
+
+INSERT INTO Skills VALUES
+(02, 'Flame Resistance', 'Increases Flame Resistance', 38);
+
+INSERT INTO Skills VALUES
+(03, 'Thunder Resistance', 'Increases Thunder Resistance', 34);
+
+INSERT INTO Skills VALUES
+(04, 'Blast Resistance', 'Increases Blast Resistance', 30);
+
+INSERT INTO Skills VALUES
+(05, 'Blight Resistance', 'Increases Blight Resistance', 5);

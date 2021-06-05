@@ -1,0 +1,89 @@
+INSERT INTO Ingredients VALUES
+(01,'Wyvern Thigh','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(02,'Tough Meat','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(03,'Aptonoth Meat','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(04,'White Liver','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(05,'Peon Turkey','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(06,'Ridgemane Tuna','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(07,'Jumbo Whelk','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(08,'Squad Sardine','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(09,'Bent-backed Shrimp','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(10,'Osseoctopus','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(11,'Magnicelery','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(12,'Stonecorn','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(13,'Plumpkin','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(14,'Aromaticelery','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(15,'Kut-Ku Bean','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(16,'Wyvern Egg','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(17,'Bullion Meat','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(18,'Diced Steak','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(19,'Tangy Tripe','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(20,'Herbivore Egg','Meat', false);
+
+INSERT INTO Ingredients VALUES
+(21,'Sushifish','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(22,'Jewel Cactus','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(23,'Shroomcap','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(24,'Shinebloom','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(25,'Tainted Fruit','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(26,'Rockfruit','Vegetable', false);
+
+INSERT INTO Ingredients VALUES
+(27,'Violet Abalone','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(28,'Gajau Liver','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(29,'Fortress Crab','Fish', false);
+
+INSERT INTO Ingredients VALUES
+(30,'Ballerina Octopus','Fish', false);

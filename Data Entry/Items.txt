@@ -1,0 +1,62 @@
+INSERT INTO Items VALUES
+(01, 'Potion', 10, 50, 'Health', 'Low', 100, 01);
+
+INSERT INTO Items VALUES
+(11, 'Potion', 10, 38, 'Health', 'Low', 100, 03);
+
+INSERT INTO Items VALUES
+(12, 'Potion', 10, 22, 'Health', 'Low', 100, 05);
+
+INSERT INTO Items VALUES
+(13, 'Potion', 10, 55, 'Health', 'Low', 100, 07);
+
+INSERT INTO Items VALUES
+(14, 'Potion', 10, 48, 'Health', 'Low', 100, 09);
+
+INSERT INTO Items VALUES
+(02, 'Mega Potion', 10, 20, 'Health', 'Medium', 300, 02);
+
+INSERT INTO Items VALUES
+(03, 'Max Potion', 10, 10, 'Health', 'High', 500, 03);
+
+INSERT INTO Items VALUES
+(04, 'Energy Drink', 10, 50, 'Stamina', 'Low', 100, 04);
+
+INSERT INTO Items VALUES
+(15, 'Energy Drink', 10, 58, 'Stamina', 'Low', 100, 02);
+
+INSERT INTO Items VALUES
+(16, 'Energy Drink', 10, 19, 'Stamina', 'Low', 100, 06);
+
+INSERT INTO Items VALUES
+(17, 'Energy Drink', 10, 27, 'Stamina', 'Low', 100, 08);
+
+INSERT INTO Items VALUES
+(18, 'Energy Drink', 10, 33, 'Stamina', 'Low', 100, 10);
+
+INSERT INTO Items VALUES
+(21, 'Demondrug', 10, 20, 'Attack', 'Medium', 300, 05);
+
+INSERT INTO Items VALUES
+(05, 'Demondrug', 10, 9, 'Attack', 'Medium', 300, 04);
+
+INSERT INTO Items VALUES
+(06, 'Mega Demondrug', 10, 10, 'Attack', 'High', 500, 06);
+
+INSERT INTO Items VALUES
+(07, 'Armorskin', 10, 20, 'Defense', 'Medium', 300, 07);
+
+INSERT INTO Items VALUES
+(08, 'Mega Armorskin', 10, 10, 'Defense', 'High', 500, 08);
+
+INSERT INTO Items VALUES
+(09, 'Immunizer', 10, 20, 'Resistance', 'Medium', 300, 09);
+
+INSERT INTO Items VALUES
+(10, 'Mega Immunizer', 10, 10, 'Resistance', 'High', 500, 10);
+
+INSERT INTO Items VALUES
+(19, 'Immunizer', 10, 87, 'Resistance', 'Medium', 300, 01);
+
+INSERT INTO Items VALUES
+(20, 'Mega Immunizer', 10, 58, 'Resistance', 'High', 500, 01);

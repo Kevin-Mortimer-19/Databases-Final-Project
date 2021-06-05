@@ -1,0 +1,14 @@
+INSERT INTO Accounts VALUES
+(01, 'Gilgamx', 30, 1);
+
+INSERT INTO Accounts VALUES
+(02, 'Qurupeco', 80, 2);
+
+INSERT INTO Accounts VALUES
+(03, 'Maximus', 700, 3);
+
+INSERT INTO Accounts VALUES
+(04, 'wgrates', 20, 1);
+
+INSERT INTO Accounts VALUES
+(05, 'cryojazz', 100, 3);

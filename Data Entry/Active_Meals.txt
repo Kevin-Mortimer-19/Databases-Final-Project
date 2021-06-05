@@ -1,0 +1,29 @@
+INSERT INTO Active_Meals VALUES
+(01, 08, 01);
+
+INSERT INTO Active_Meals VALUES
+(02, 01, 02);
+
+INSERT INTO Active_Meals VALUES
+(03, 11, 03);
+
+INSERT INTO Active_Meals VALUES
+(04, 04, 04);
+
+INSERT INTO Active_Meals VALUES
+(05, 02, 05);
+
+INSERT INTO Active_Meals VALUES
+(06, 03, 06);
+
+INSERT INTO Active_Meals VALUES
+(07, 08, 07);
+
+INSERT INTO Active_Meals VALUES
+(08, 06, 08);
+
+INSERT INTO Active_Meals VALUES
+(09, 10, 09);
+
+INSERT INTO Active_Meals VALUES
+(10, 07, 10);

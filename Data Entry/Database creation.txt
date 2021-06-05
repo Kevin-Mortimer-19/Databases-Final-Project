@@ -1,0 +1,188 @@
+DROP TABLE IF EXISTS Active_Meals;
+DROP TABLE IF EXISTS Recipes;
+DROP TABLE IF EXISTS Meals;
+DROP TABLE IF EXISTS Ingredients;
+DROP TABLE IF EXISTS Gear_Recipes;
+DROP TABLE IF EXISTS Skills;
+DROP TABLE IF EXISTS Gear;
+DROP TABLE IF EXISTS Materials;
+DROP TABLE IF EXISTS Featured_Monster;
+DROP TABLE IF EXISTS Active_Quests;
+DROP TABLE IF EXISTS Quests;
+DROP TABLE IF EXISTS Monsters;
+DROP TABLE IF EXISTS Items;
+DROP TABLE IF EXISTS Characters;
+DROP TABLE IF EXISTS Accounts;
+
+
+CREATE TABLE Accounts
+(
+	Account_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(20),
+	Time_Played		INT,
+	Number_Of_Characters	INT
+);
+
+
+CREATE TABLE Characters
+(
+	Character_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(20),
+	Rank			INT,
+	Max_Ingredients		INT,
+	Gold			INT,
+	Account_ID		INT,
+	CONSTRAINT Characters FOREIGN KEY (Account_ID) REFERENCES Accounts(Account_ID)
+);
+
+
+CREATE TABLE Items
+(
+	Item_ID			INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(40),
+	Amount_Held		INT,
+	Amount_In_Box		INT,
+	Stat_Effected		INT,
+	Strength		VARCHAR(10),
+	Cost			INT,
+	Character_ID		INT,
+	CONSTRAINT Items FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+
+CREATE TABLE Monsters
+(
+	Monster_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(20),
+	Rarity			INT,
+	Number_Of_Materials	INT,
+	Health			INT,
+	Attack			INT
+);
+
+
+CREATE TABLE Quests
+(
+	Quest_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(100),
+	Rank			INT,
+	Reward			INT,
+	Time_Limit		INT,
+	Number_Of_Attempts	INT
+);
+
+
+CREATE TABLE Active_Quests
+(
+	Active_Quest_ID		INT		NOT NULL PRIMARY KEY,
+	Quest_ID		INT,
+	Character_ID		INT,
+	CONSTRAINT Active_Quest FOREIGN KEY (Quest_ID) REFERENCES Quests(Quest_ID),
+	CONSTRAINT Active_Quest2 FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+
+CREATE TABLE Featured_Monster
+(
+	Featured_Monster_ID		INT		NOT NULL PRIMARY KEY,
+	Quest_ID			INT,
+	Monster_ID			INT,
+	CONSTRAINT Featured_Monster FOREIGN KEY (Quest_ID) REFERENCES Quests(Quest_ID),
+	CONSTRAINT Featured_Monster2 FOREIGN KEY (Monster_ID) REFERENCES Monsters(Monster_ID)
+);
+
+
+CREATE TABLE Materials
+(
+	Material_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(40),
+	Rarity			INT,
+	Monster_ID		INT,
+	Character_ID		INT,
+	CONSTRAINT Materials FOREIGN KEY (Monster_ID) REFERENCES Monsters(Monster_ID),
+	CONSTRAINT Materials2 FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+
+CREATE TABLE Gear
+(
+	Gear_ID			INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(40),
+	Slot			VARCHAR(10),
+	Defense			INT,
+	Resistance		INT,
+	Character_ID		INT,
+	CONSTRAINT Gear FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);
+
+
+CREATE TABLE Skills
+(
+	Skill_ID	INT		NOT NULL PRIMARY KEY,
+	Name		VARCHAR(40),
+	Description	VARCHAR(200),
+	Gear_ID		INT,
+	CONSTRAINT Skill FOREIGN KEY (Gear_ID) REFERENCES Gear(Gear_ID)
+);
+
+
+CREATE TABLE Gear_Recipes
+(
+	Gear_Recipe_ID	INT		NOT NULL PRIMARY KEY,
+	Gear_ID		INT,
+	Material_ID1	INT,
+	Material_ID2	INT,
+	Material_ID3	INT,
+	Material_ID4	INT,
+	CONSTRAINT Gear_Recipe FOREIGN KEY (Gear_ID) REFERENCES Gear(Gear_ID),
+	CONSTRAINT Gear_Recipe2 FOREIGN KEY (Material_ID1) REFERENCES Materials(Material_ID),
+	CONSTRAINT Gear_Recipe3 FOREIGN KEY (Material_ID2) REFERENCES Materials(Material_ID),
+	CONSTRAINT Gear_Recipe4 FOREIGN KEY (Material_ID3) REFERENCES Materials(Material_ID),
+	CONSTRAINT Gear_Recipe5 FOREIGN KEY (Material_ID4) REFERENCES Materials(Material_ID)
+);
+
+
+CREATE TABLE Ingredients
+(
+	Ingredient_ID		INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(20),
+	Type			VARCHAR(10),
+	Freshness		BOOLEAN
+);
+
+
+CREATE TABLE Meals
+(
+	Meal_ID			INT		NOT NULL PRIMARY KEY,
+	Name			VARCHAR(40),
+	Health_Increase		INT,
+	Stamina_Increase	INT,
+	Attack_Increase		INT,
+	Defense_Increase	INT,
+	Resistance_Increase	INT,
+	Cost			INT
+);
+
+
+CREATE TABLE Recipes
+(
+	Recipe_ID		INT		NOT NULL PRIMARY KEY,
+	Meal_ID			INT,
+	Ingredient_ID1		INT,
+	Ingredient_ID2		INT,
+	Ingredient_ID3		INT,
+	CONSTRAINT Recipe FOREIGN KEY (Meal_ID) REFERENCES Meals(Meal_ID),
+	CONSTRAINT Recipe2 FOREIGN KEY (Ingredient_ID1) REFERENCES Ingredients(Ingredient_ID),
+	CONSTRAINT Recipe3 FOREIGN KEY (Ingredient_ID2) REFERENCES Ingredients(Ingredient_ID),
+	CONSTRAINT Recipe4 FOREIGN KEY (Ingredient_ID3) REFERENCES Ingredients(Ingredient_ID)
+);
+
+
+CREATE TABLE Active_Meals
+(
+	Active_Meal_ID		INT		NOT NULL PRIMARY KEY,
+	Meal_ID			INT,
+	Character_ID		INT,
+	CONSTRAINT Active_Meal FOREIGN KEY (Meal_ID) REFERENCES Meals(Meal_ID),
+	CONSTRAINT Active_Meal2 FOREIGN KEY (Character_ID) REFERENCES Characters(Character_ID)
+);

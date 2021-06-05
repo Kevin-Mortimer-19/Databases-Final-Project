@@ -1,0 +1,119 @@
+INSERT INTO Gear_Recipes VALUES
+(001, 001, 29, 30, 31, 32);
+
+INSERT INTO Gear_Recipes VALUES
+(002, 002, 29, 30, 31, 32);
+
+INSERT INTO Gear_Recipes VALUES
+(003, 003, 29, 30, 31, 32);
+
+INSERT INTO Gear_Recipes VALUES
+(004, 004, 29, 30, 31, 32);
+
+INSERT INTO Gear_Recipes VALUES
+(005, 005, 57, 58, 59, 60);
+
+INSERT INTO Gear_Recipes VALUES
+(006, 006, 57, 58, 59, 60);
+
+INSERT INTO Gear_Recipes VALUES
+(007, 007, 57, 58, 59, 60);
+
+INSERT INTO Gear_Recipes VALUES
+(008, 008, 57, 58, 59, 60);
+
+INSERT INTO Gear_Recipes VALUES
+(009, 009, 65, 66, 67, 68);
+
+INSERT INTO Gear_Recipes VALUES
+(010, 010, 65, 66, 67, 68);
+
+INSERT INTO Gear_Recipes VALUES
+(011, 011, 65, 66, 67, 68);
+
+INSERT INTO Gear_Recipes VALUES
+(012, 012, 65, 66, 67, 68);
+
+INSERT INTO Gear_Recipes VALUES
+(013, 013, 61, 62, 63, 64);
+
+INSERT INTO Gear_Recipes VALUES
+(014, 014, 61, 62, 63, 64);
+
+INSERT INTO Gear_Recipes VALUES
+(015, 015, 61, 62, 63, 64);
+
+INSERT INTO Gear_Recipes VALUES
+(016, 016, 61, 62, 63, 64);
+
+INSERT INTO Gear_Recipes VALUES
+(017, 017, 77, 78, 79, 80);
+
+INSERT INTO Gear_Recipes VALUES
+(018, 018, 77, 78, 79, 80);
+
+INSERT INTO Gear_Recipes VALUES
+(019, 019, 77, 78, 79, 80);
+
+INSERT INTO Gear_Recipes VALUES
+(020, 020, 77, 78, 79, 80);
+
+INSERT INTO Gear_Recipes VALUES
+(021, 021, 9, 10, 11, 12);
+
+INSERT INTO Gear_Recipes VALUES
+(022, 022, 9, 10, 11, 12);
+
+INSERT INTO Gear_Recipes VALUES
+(023, 023, 9, 10, 11, 12);
+
+INSERT INTO Gear_Recipes VALUES
+(024, 024, 9, 10, 11, 12);
+
+INSERT INTO Gear_Recipes VALUES
+(025, 025, 49, 50, 51, 52);
+
+INSERT INTO Gear_Recipes VALUES
+(026, 026, 49, 50, 51, 52);
+
+INSERT INTO Gear_Recipes VALUES
+(027, 027, 49, 50, 51, 52);
+
+INSERT INTO Gear_Recipes VALUES
+(028, 028, 49, 50, 51, 52);
+
+INSERT INTO Gear_Recipes VALUES
+(029, 029, 17, 18, 19, 20);
+
+INSERT INTO Gear_Recipes VALUES
+(030, 030, 17, 18, 19, 20);
+
+INSERT INTO Gear_Recipes VALUES
+(031, 031, 17, 18, 19, 20);
+
+INSERT INTO Gear_Recipes VALUES
+(032, 032, 17, 18, 19, 20);
+
+INSERT INTO Gear_Recipes VALUES
+(033, 033, 33, 34, 35, 36);
+
+INSERT INTO Gear_Recipes VALUES
+(034, 034, 33, 34, 35, 36);
+
+INSERT INTO Gear_Recipes VALUES
+(035, 035, 33, 34, 35, 36);
+
+INSERT INTO Gear_Recipes VALUES
+(036, 036, 33, 34, 35, 36);
+
+INSERT INTO Gear_Recipes VALUES
+(037, 037, 45, 46, 47, 48);
+
+INSERT INTO Gear_Recipes VALUES
+(038, 038, 45, 46, 47, 48);
+
+INSERT INTO Gear_Recipes VALUES
+(039, 039, 45, 46, 47, 48);
+
+INSERT INTO Gear_Recipes VALUES
+(040, 040, 45, 46, 47, 48);

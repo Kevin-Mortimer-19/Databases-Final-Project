@@ -1,0 +1,83 @@
+INSERT INTO Featured_Monster VALUES
+(01, 01, 01);
+
+INSERT INTO Featured_Monster VALUES
+(02, 02, 02);
+
+INSERT INTO Featured_Monster VALUES
+(03, 03, 03);
+
+INSERT INTO Featured_Monster VALUES
+(04, 04, 04);
+
+INSERT INTO Featured_Monster VALUES
+(05, 05, 05);
+
+INSERT INTO Featured_Monster VALUES
+(06, 06, 06);
+
+INSERT INTO Featured_Monster VALUES
+(07, 07, 07);
+
+INSERT INTO Featured_Monster VALUES
+(08, 08, 08);
+
+INSERT INTO Featured_Monster VALUES
+(09, 09, 09);
+
+INSERT INTO Featured_Monster VALUES
+(10, 10, 10);
+
+INSERT INTO Featured_Monster VALUES
+(11, 11, 11);
+
+INSERT INTO Featured_Monster VALUES
+(12, 12, 12);
+
+INSERT INTO Featured_Monster VALUES
+(13, 13, 13);
+
+INSERT INTO Featured_Monster VALUES
+(14, 14, 14);
+
+INSERT INTO Featured_Monster VALUES
+(15, 15, 15);
+
+INSERT INTO Featured_Monster VALUES
+(16, 16, 16);
+
+INSERT INTO Featured_Monster VALUES
+(17, 17, 17);
+
+INSERT INTO Featured_Monster VALUES
+(18, 18, 18);
+
+INSERT INTO Featured_Monster VALUES
+(19, 19, 19);
+
+INSERT INTO Featured_Monster VALUES
+(20, 20, 20);
+
+INSERT INTO Featured_Monster VALUES
+(21, 21, 09);
+
+INSERT INTO Featured_Monster VALUES
+(22, 21, 15);
+
+INSERT INTO Featured_Monster VALUES
+(23, 21, 20);
+
+INSERT INTO Featured_Monster VALUES
+(24, 22, 04);
+
+INSERT INTO Featured_Monster VALUES
+(25, 22, 19);
+
+INSERT INTO Featured_Monster VALUES
+(26, 23, 10);
+
+INSERT INTO Featured_Monster VALUES
+(27, 23, 15);
+
+INSERT INTO Featured_Monster VALUES
+(28, 23, 18);

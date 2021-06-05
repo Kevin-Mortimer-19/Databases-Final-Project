@@ -1,0 +1,68 @@
+INSERT INTO Quests VALUES
+(01, 'Tickled Pink', 4, 16000, 50, 3);
+
+INSERT INTO Quests VALUES
+(02, 'Banbaro Blockade', 10, 40000, 50, 3);
+
+INSERT INTO Quests VALUES
+(03, 'Blizzard Blitz', 11, 44000, 50, 3);
+
+INSERT INTO Quests VALUES
+(04, 'Wildspire Rampage', 3, 12000, 50, 3);
+
+INSERT INTO Quests VALUES
+(05, 'Beyond the Blasting Scales', 8, 32000, 50, 3);
+
+INSERT INTO Quests VALUES
+(06, 'Horned Tyrant Below the Sands', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(07, 'Dodogama Drama', 6, 24000, 50, 3);
+
+INSERT INTO Quests VALUES
+(08, 'The Greatest Jagras', 1, 4000, 50, 3);
+
+INSERT INTO Quests VALUES
+(09, 'Kirin the Myth', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(10, 'Mans Best Friend', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(11, 'Googly-eyed Green Monster', 2, 8000, 50, 3);
+
+INSERT INTO Quests VALUES
+(12, 'A Fiery Throne Atop the Forest', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(13, 'The Current Situation', 3, 12000, 50, 3);
+
+INSERT INTO Quests VALUES
+(14, 'Ore-eating Occupier', 7, 28000, 50, 3);
+
+INSERT INTO Quests VALUES
+(15, 'Hellish Fiend Vaal Hazak', 9, 36000, 50, 3);
+
+INSERT INTO Quests VALUES
+(16, 'Uncorner the Market', 12, 48000, 50, 3);
+
+INSERT INTO Quests VALUES
+(17, 'Embodiment of Elegance', 5, 20000, 50, 3);
+
+INSERT INTO Quests VALUES
+(18, 'A Bone to Pick', 4, 16000, 50, 3);
+
+INSERT INTO Quests VALUES
+(19, 'The Piscine Problem', 3, 12000, 50, 3);
+
+INSERT INTO Quests VALUES
+(20, 'The Eye of the Storm', 9, 36000, 50, 3);
+
+INSERT INTO Quests VALUES
+(21, 'Elder Deluxe', 9, 36000, 50, 3);
+
+INSERT INTO Quests VALUES
+(22, 'Desert Duel', 6, 24000, 50, 3);
+
+INSERT INTO Quests VALUES
+(23, 'Rotten Rumble', 9, 36000, 50, 3);

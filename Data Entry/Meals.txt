@@ -1,0 +1,35 @@
+INSERT INTO Meals VALUES
+(01,'Small Meat Platter', 10, 10, 20, 0, 0, 500);
+
+INSERT INTO Meals VALUES
+(02,'Meat Platter', 20, 20, 30, 0, 0, 1000);
+
+INSERT INTO Meals VALUES
+(03,'Large Meat Platter', 30, 30, 50, 0, 0, 2000);
+
+INSERT INTO Meals VALUES
+(04,'Small Fish Platter', 10, 10, 0, 20, 0, 500);
+
+INSERT INTO Meals VALUES
+(05,'Fish Platter', 20, 20, 0, 30, 0, 1000);
+
+INSERT INTO Meals VALUES
+(06,'Large Fish Platter', 30, 30, 0, 50, 0, 2000);
+
+INSERT INTO Meals VALUES
+(07,'Small Vegetable Platter', 10, 10, 0, 0, 20, 500);
+
+INSERT INTO Meals VALUES
+(08,'Vegetable Platter', 20, 20, 0, 0, 30, 1000);
+
+INSERT INTO Meals VALUES
+(09,'Large Vegetable Platter', 30, 30, 0, 0, 50, 2000);
+
+INSERT INTO Meals VALUES
+(10,'Small Balanced Platter', 10, 10, 10, 10, 0, 500);
+
+INSERT INTO Meals VALUES
+(11,'Balanced Platter', 20, 20, 15, 15, 10, 1000);
+
+INSERT INTO Meals VALUES
+(12,'Large Balanced Platter', 30, 30, 30, 30, 30, 2000);
